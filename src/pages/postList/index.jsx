@@ -46,10 +46,12 @@ export default function PostList() {
 
       {
         openModal && (
-          <div>
+          <div className="deleteModal">
             <h3>{openModal}번 게시물을 삭제하시겠습니까?</h3>
-            <button onClick={handleDelete}>Yes</button>
-            <button onClick={() => setOpenModal(false)}>No</button>
+            <div className="btns">
+              <button onClick={handleDelete}>Yes</button>
+              <button onClick={() => setOpenModal(false)}>No</button>
+            </div>
           </div>
         )
       }
