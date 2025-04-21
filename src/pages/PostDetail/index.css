@@ -2,6 +2,27 @@
   --button-link-hover-color: #535bf2;
   --button-link-color: #646cff;
 }
+.postDetailCont {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 18px;
+  color: #333;
+  width: 100%;
+}
+
+.postDetailCont h2 strong{
+  display:block;
+  font-size:24px;
+  font-weight:700;
+  margin-bottom:20px;
+}
+.postDetailCont h2 p{
+  font-size:20px;
+  margin-bottom:20px;
+}
 
 .btn_box .btn {
   text-decoration: none;
@@ -13,6 +34,9 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background-color .3s
+}
+.btn_box .btn:hover{
+  background-color: var(--button-link-hover-color);
 }
 
 .modal_cont {
@@ -36,4 +60,10 @@
 }
 .modal_cont .modal_btn_box button + button {
   margin-left:10px;
+}
+
+
+/* 추후 협의 후 main.css로 옮겨도 되는지! 확인필요 */
+body{
+  position:relative;
 }

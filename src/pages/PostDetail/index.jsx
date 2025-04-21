@@ -8,7 +8,6 @@ export default function PostDetail() {
   const { id } = useParams();
   const [post, setPost] = useState(null);
   const [showModal, setShowModal] = useState(false);
-
   const modalContainer = document.body;
 
   useEffect(() => {
@@ -18,11 +17,10 @@ export default function PostDetail() {
   if (!post) return <div>...Loading</div>;
 
   return (
-    <div>
+    <div className="postDetailCont">
       <h2>
-        <span>Post ID : {id}</span>
-        <br />
-        <strong>{post.title}</strong>
+        <strong>Post ID : {id}</strong>
+        <p>{post.title}</p>
       </h2>
       <p>{post.body}</p>
       <div className="btn_box">
@@ -44,7 +42,6 @@ export default function PostDetail() {
           </div>,
           modalContainer
         )}
-      ;
     </div>
   );
 }
