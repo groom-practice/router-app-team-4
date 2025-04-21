@@ -4,11 +4,12 @@ import Home from "../pages/Home";
 import PostList from "../pages/postList";
 import PostDetail from "../pages/PostDetail";
 import EditPost from "../pages/EditPost";
+import MainLayout from "../layouts/MainLayout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <MainLayout />,
     children: [
       { index: true, element: <Home /> },
       {
