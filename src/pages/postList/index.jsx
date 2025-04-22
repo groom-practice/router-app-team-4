@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { deletePost, getAllPosts } from "../../apis/posts";
 import { Link } from "react-router-dom";
 import "./index.css"
+import { createPortal } from "react-dom";
+import PortalModalContainer from "../../components/PortalModalContainer";
 
 export default function PostList() {
   const [postList, setPostList] = useState([]);
@@ -45,14 +47,17 @@ export default function PostList() {
       </ul>
 
       {
-        openModal && (
-          <div className="deleteModal">
-            <h3>{openModal}번 게시물을 삭제하시겠습니까?</h3>
-            <div className="btns">
-              <button onClick={handleDelete}>Yes</button>
-              <button onClick={() => setOpenModal(false)}>No</button>
+        openModal && createPortal(
+          <PortalModalContainer>
+            <div className="deleteModal">
+              <h3>{openModal}번 게시물을 삭제하시겠습니까?</h3>
+              <div className="btns">
+                <button onClick={handleDelete}>Yes</button>
+                <button onClick={() => setOpenModal(false)}>No</button>
+              </div>
             </div>
-          </div>
+          </PortalModalContainer>,
+          document.body
         )
       }
     </section>
