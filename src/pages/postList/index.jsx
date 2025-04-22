@@ -48,12 +48,12 @@ export default function PostList() {
 
       {
         openModal && createPortal(
-          <PortalModalContainer>
+          <PortalModalContainer onClose={() => setOpenModal(false)}>
             <div className="deleteModal">
               <h3>{openModal}번 게시물을 삭제하시겠습니까?</h3>
               <div className="btns">
-                <button onClick={handleDelete}>Yes</button>
-                <button onClick={() => setOpenModal(false)}>No</button>
+                <button onClick={handleDelete} disabled={isDeleting}>Yes</button>
+                <button onClick={() => setOpenModal(false)} disabled={isDeleting}>No</button>
               </div>
             </div>
           </PortalModalContainer>,
