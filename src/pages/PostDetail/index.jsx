@@ -8,7 +8,20 @@ export default function PostDetail() {
   const { id } = useParams();
   const [post, setPost] = useState(null);
   const [showModal, setShowModal] = useState(false);
-  const modalContainer = document.body;
+
+  const handleAddFavorite = () => {
+    const favorites = JSON.parse(localStorage.getItem("favoritePosts") || "[]");
+
+    const newFavorite = [
+      ...favorites,
+      { id: post.id, title: post.title, body: post.body },
+    ];
+    localStorage.setItem("favoritePosts", JSON.stringify(newFavorite));
+
+    setShowModal(false);
+  };
+
+  const modalContainer = document.querySelector(".main-content");
 
   useEffect(() => {
     getPostById(id).then((res) => setPost(res));
@@ -35,9 +48,13 @@ export default function PostDetail() {
         createPortal(
           <div className="modal_cont">
             <h3>즐겨찾기에 추가하시겠습니까?</h3>
-            <div className="modal_btn_box">
-              <button>Yes</button>
-              <button onClick={() => setShowModal(false)}>No</button>
+            <div className="btn_box">
+              <button className="btn" onClick={handleAddFavorite}>
+                Yes
+              </button>
+              <button className="btn" onClick={() => setShowModal(false)}>
+                No
+              </button>
             </div>
           </div>,
           modalContainer
