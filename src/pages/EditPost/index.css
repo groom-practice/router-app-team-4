@@ -1,0 +1,27 @@
+.edit-post-page form input,
+.edit-post-page form textarea {
+  width: 700px;
+  padding: 10px 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 10px 0px 10px 0px;
+}
+
+.edit-post-page form textarea {
+  height: 300px;
+}
+
+.edit-post-page form button {
+  background-color: rgb(115, 154, 222);
+  color: white;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.edit-post-page form button:hover {
+  background-color: rgb(44, 44, 240);
+}
