@@ -23,6 +23,9 @@
   font-size:20px;
   margin-bottom:20px;
 }
+.btn_box{
+  margin-top:20px;
+}
 
 .btn_box .btn {
   text-decoration: none;
@@ -33,7 +36,8 @@
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color .3s
+  transition: background-color .3s;
+  font-size:14px;
 }
 .btn_box .btn:hover{
   background-color: var(--button-link-hover-color);
@@ -41,7 +45,8 @@
 
 .modal_cont {
   position: absolute;
-  left:   calc(50% - 150px);
+  top: calc(50% - 90px);
+  left: calc(50% - 150px);
   padding: 40px;
   display: flex;
   flex-direction: column;
@@ -52,18 +57,13 @@
   max-width: 300px;
   background-color:#fff;
   border-radius:10px;
+  box-shadow: 0px 0px 6px #b7b7b7;
 }
-.modal_cont .modal_btn_box {
+.modal_cont .btn_box {
   display:flex;
   align-items:center;
   justify-content: center;
 }
-.modal_cont .modal_btn_box button + button {
+.modal_cont .btn_box button + button {
   margin-left:10px;
-}
-
-
-/* 추후 협의 후 main.css로 옮겨도 되는지! 확인필요 */
-body{
-  position:relative;
 }
