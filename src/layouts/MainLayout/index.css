@@ -32,17 +32,21 @@ header > h1 {
 }
 
 .sideBar {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100px;
+  height: calc(100vh - 80px);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 20px;
-  width: 100px;
-  height: 100%;
   background-color: #f8f8f8;
   border-right: 1px solid #e0e0e0;
   padding: 0 20px;
   box-sizing: border-box;
+  z-index: 999;
 }
 
 .sideBar > a,
@@ -66,4 +70,5 @@ header > h1 {
   padding: 20px;
   box-sizing: border-box;
   display: flex;
+  margin-left: 100px;
 }
