@@ -1,30 +1,28 @@
-section {
+.postListSection {
   display: flex;
   flex-direction: column;
-  padding: 40px;
+  margin: 10px;
   width: 100%;
-  overflow: scroll;
 }
 
-h3 {
-  font-size: 25px;
-  font-weight: 700;
-  margin-bottom: 20px;
+.postListSection>h3 {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 15px;
 }
 
-ul>li {
+.postListSection>ul>li {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  box-shadow: 0 2px 4px #0000001a;
   border-radius: 4px;
   background-color: #f9f9f9;
-  transition: background-color 0.3s;
+  margin-bottom: 15px;
 }
 
-ul>li>a {
+.postListSection>ul>li>a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
@@ -34,25 +32,25 @@ ul>li>a {
   text-overflow: ellipsis;
   max-width: 80%;
   cursor: pointer;
-  transition: color 0.3s;
+  transition: color .3s;
 }
 
-ul>li>a:hover {
-  color: var(--button-link-horver-color);
+.postListSection>ul>li>a:hover {
+  color: var(--button-link-hover-color);
 }
 
-ul>li>button {
+.postListSection>ul>li>button {
   background-color: var(--button-link-color);
-  color: white;
+  color: #fff;
   border: none;
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color .3s;
 }
 
-ul>li>button:hover {
-  background-color: var(--button-link-horver-color);
+.postListSection>ul>li>button:hover {
+  background-color: var(--button-link-hover-color);
 }
 
 .deleteModal>h3 {
@@ -61,23 +59,22 @@ ul>li>button:hover {
   margin-bottom: 20px;
 }
 
-.deleteModal>.btns {
+.btns {
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
 }
 
-.deleteModal>.btns>button {
-  background-color: var(--button-link-color);
+.btns>button {
+  margin-left: 10px;
   color: white;
-  text-align: right;
+  background-color: var(--button-link-color);
   border: none;
+  border-radius: 5px;
   padding: 10px 20px;
-  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color .3s;
 }
 
-.deleteModal>.btns>button:hover {
+.btns>button:hover{
   background-color: var(--button-link-hover-color);
 }
