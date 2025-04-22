@@ -1,9 +1,8 @@
-// src/pages/EditPost/index.jsx
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import PostForm from "../../components/PostForm";
 import { getPostById, updatePost } from "../../apis/posts";
-import "./EditPost.css";
+import "./index.css";
 
 export default function EditPost() {
   const { id } = useParams();
