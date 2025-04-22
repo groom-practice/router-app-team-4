@@ -11,7 +11,11 @@ export default function PostDetail() {
 
   const handleAddFavorite = () => {
     const favorites = JSON.parse(localStorage.getItem("favoritePosts") || "[]");
-
+    const ids = favorites.map((f) => f.id);
+    if (ids.includes(post.id)) {
+      setShowModal(false);
+      return;
+    }
     const newFavorite = [
       ...favorites,
       { id: post.id, title: post.title, body: post.body },
@@ -40,7 +44,13 @@ export default function PostDetail() {
         <Link to={`/posts/${post.id}/edit`} className="btn">
           EDIT
         </Link>
-        <button className="btn" onClick={() => setShowModal(true)}>
+        <button
+          className="btn"
+          onClick={() => setShowModal(true)}
+          disabled={JSON.parse(
+            localStorage.getItem("favoritePosts") || "[]"
+          ).some((fav) => fav.id === post.id)}
+        >
           즐겨찾기
         </button>
       </div>
