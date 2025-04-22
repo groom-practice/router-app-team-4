@@ -7,9 +7,12 @@
 }
 
 .home button {
+  border: none;
   background-color: #646cff;
   color: #fff;
   cursor: pointer;
+  padding: 10px 40px;
+  border-radius: 5px;
 }
 
 .login-modal {
