@@ -67,3 +67,9 @@
 .modal_cont .btn_box button + button {
   margin-left:10px;
 }
+
+.btn:disabled,
+.btn:disabled:hover {
+  background-color: #b7b7b7;
+  cursor:auto;
+}
